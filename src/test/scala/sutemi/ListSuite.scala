@@ -17,4 +17,10 @@ class ListSuite extends FunSuite {
     assert(Lists.penultimate(List(1)) === None)
     assert(Lists.penultimate(List(1, 1, 2, 3, 5, 8)) === Some(5))
   }
+
+  test("problem 3: kth element of a list") {
+    assert(Lists.nth(1, List()) === None)
+    assert(Lists.nth(-5, List(1,2,3)) === None)
+    assert(Lists.nth(2, List(1, 1, 2, 3, 5, 8)) == Some(2))
+  }
 }
