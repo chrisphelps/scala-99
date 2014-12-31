@@ -49,4 +49,9 @@ object Lists {
   def reverseFold[T](list: List[T]): List[T] = {
     list.foldLeft(List[T]())((ls, x) => x :: ls)
   }
+
+  def isPalindrome[T](list: List[T]): Boolean = list match {
+    case Nil => false
+    case _ => reverse(list) == list
+  }
 }

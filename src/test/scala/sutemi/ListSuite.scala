@@ -38,4 +38,10 @@ class ListSuite extends FunSuite {
     assert(Lists.reverseFold(List()) === List())
     assert(Lists.reverseFold(List(1, 1, 2, 3, 5, 8)) === List(8, 5, 3, 2, 1, 1))
   }
+
+  test("problem 6: palindrome") {
+    assert(Lists.isPalindrome(List()) === false)
+    assert(Lists.isPalindrome(List(1, 2, 3, 2, 1)) === true)
+    assert(Lists.isPalindrome(List(1, 2, 3, 4, 5)) === false)
+  }
 }
