@@ -67,4 +67,17 @@ object Lists {
       case x :: xs => x :: flatten(xs)
     }
   }
+
+  def compress[T](list: List[T]): List[T] = {
+    def compressAcc(acc: T, list: List[T]): List[T] = list match {
+      case Nil => Nil
+      case x :: xs if x == acc => compressAcc(acc, xs)
+      case x :: xs => x :: compressAcc(x, xs)
+    }
+
+    list match {
+      case Nil => Nil
+      case x :: xs => x :: compressAcc(x, xs)
+    }
+  }
 }
