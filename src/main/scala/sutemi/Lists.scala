@@ -80,4 +80,13 @@ object Lists {
       case x :: xs => x :: compressAcc(x, xs)
     }
   }
+
+  def pack[T](list: List[T]): List[List[T]] = list match {
+    case Nil => Nil
+    case x :: xs => pack(xs) match {
+      case Nil => List(x) :: Nil
+      case head :: rest if head.head == x => (x :: head) :: rest
+      case head :: rest => List(x) :: head :: rest
+    }
+  }
 }
