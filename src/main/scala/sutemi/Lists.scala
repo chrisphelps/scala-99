@@ -89,4 +89,8 @@ object Lists {
       case head :: rest => List(x) :: head :: rest
     }
   }
+
+  def encode[T](list: List[T]): List[(Int, T)] = {
+    pack(list).map(l => (l.size, l.head))
+  }
 }
