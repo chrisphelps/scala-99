@@ -23,4 +23,9 @@ class ListSuite extends FunSuite {
     assert(Lists.nth(-5, List(1,2,3)) === None)
     assert(Lists.nth(2, List(1, 1, 2, 3, 5, 8)) == Some(2))
   }
+
+  test("problem 4: number of elements in a list") {
+    assert(Lists.length(List()) === 0)
+    assert(Lists.length(List(1,2,3,4,5)) === 5)
+  }
 }

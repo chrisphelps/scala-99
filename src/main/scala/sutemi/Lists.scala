@@ -29,4 +29,12 @@ object Lists {
     case (0, x::_) => Some(x)
     case (k, _::xs) => nth(k - 1, xs)
   }
+
+  def length[T](list: List[T]): Int = {
+    def count(acc: Int, list: List[T]): Int = list match {
+      case Nil => acc
+      case x::xs => count(acc + 1, xs)
+    }
+    count(0, list)
+  }
 }
