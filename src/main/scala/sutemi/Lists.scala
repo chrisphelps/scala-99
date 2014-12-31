@@ -97,4 +97,11 @@ object Lists {
   def encodeModified[T](list: List[T]): List[Any] = {
     pack(list).map(l => if (l.size > 1) (l.size, l.head) else l.head)
   }
+
+  def decode[T](list: List[(Int, T)]): List[T] = {
+    def repeat(n: Int, item: T): List[T] =
+      if (n == 1) List(item)
+      else item :: repeat(n-1, item)
+    list.flatMap {case (times, item) => repeat(times, item)}
+  }
 }
