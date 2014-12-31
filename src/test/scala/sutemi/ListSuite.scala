@@ -28,4 +28,14 @@ class ListSuite extends FunSuite {
     assert(Lists.length(List()) === 0)
     assert(Lists.length(List(1,2,3,4,5)) === 5)
   }
+
+  test("problem 5: reverse a list") {
+    assert(Lists.reverse(List()) === List())
+    assert(Lists.reverse(List(1, 1, 2, 3, 5, 8)) === List(8, 5, 3, 2, 1, 1))
+  }
+
+  test("problem 5: reverse a list with fold") {
+    assert(Lists.reverseFold(List()) === List())
+    assert(Lists.reverseFold(List(1, 1, 2, 3, 5, 8)) === List(8, 5, 3, 2, 1, 1))
+  }
 }

@@ -37,4 +37,16 @@ object Lists {
     }
     count(0, list)
   }
+
+  def reverse[T](list: List[T]): List[T] = {
+    def traverse(acc: List[T], list: List[T]): List[T] = list match {
+      case Nil => acc
+      case x::xs => traverse(x :: acc, xs)
+    }
+    traverse(Nil, list)
+  }
+
+  def reverseFold[T](list: List[T]): List[T] = {
+    list.foldLeft(List[T]())((ls, x) => x :: ls)
+  }
 }
