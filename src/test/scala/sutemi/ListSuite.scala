@@ -44,4 +44,10 @@ class ListSuite extends FunSuite {
     assert(Lists.isPalindrome(List(1, 2, 3, 2, 1)) === true)
     assert(Lists.isPalindrome(List(1, 2, 3, 4, 5)) === false)
   }
+
+  test("problem 7: flatten") {
+    assert(Lists.flatten(List(List(1, 1), List (1, 2))) === List(1, 1, 1, 2))
+    assert(Lists.flatten(List(List(1, 1), 2, List(3))) === List(1, 1, 2, 3))
+    assert(Lists.flatten(List(List(1, 1), 2, List(3, List(5, 8)))) === List(1, 1, 2, 3, 5, 8))
+  }
 }

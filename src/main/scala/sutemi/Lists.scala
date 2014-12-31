@@ -54,4 +54,17 @@ object Lists {
     case Nil => false
     case _ => reverse(list) == list
   }
+
+  def flatten(list: List[Any]): List[Any] = {
+    def consAll(head: List[Any], rest: List[Any]): List[Any] = head match {
+      case Nil => flatten(rest)
+      case f :: fs => f :: consAll(fs, rest)
+    }
+
+    list match {
+      case Nil => Nil
+      case (x:List[Any]) :: xs => consAll(x, flatten(xs))
+      case x :: xs => x :: flatten(xs)
+    }
+  }
 }
