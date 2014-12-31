@@ -104,4 +104,12 @@ object Lists {
       else item :: repeat(n-1, item)
     list.flatMap {case (times, item) => repeat(times, item)}
   }
+
+  def encodeDirect[T](list: List[T]): List[(Int, T)] = list match {
+    case Nil => Nil
+    case x :: xs => {
+      val (same, rest) = list.span(_ == x)
+      (same.length, x) :: encodeDirect(rest)
+    }
+  }
 }
