@@ -132,4 +132,10 @@ object Lists {
     val rest = list.drop(count)
     (first, rest)
   }
+
+  def slice[T](fromIdx: Int, toIdx: Int, list: List[T]): List[T] = {
+    val (first, rest) = split(fromIdx, list)
+    val (slice, tail) = split(toIdx - fromIdx, rest)
+    slice
+  }
 }

@@ -90,4 +90,8 @@ class ListSuite extends FunSuite {
   test("problem 17: split a list") {
     assert(Lists.split(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) === (List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
   }
+
+  test("problem 18: slice a list") {
+    assert(Lists.slice(3, 7, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) === List('d, 'e, 'f, 'g))
+  }
 }
