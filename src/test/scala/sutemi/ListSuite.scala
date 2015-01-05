@@ -86,4 +86,8 @@ class ListSuite extends FunSuite {
   test("problem 16: drop elements from a list") {
     assert(Lists.drop(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) === List('a, 'b, 'd, 'e, 'g, 'h, 'j, 'k))
   }
+
+  test("problem 17: split a list") {
+    assert(Lists.split(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) === (List('a, 'b, 'c),List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
+  }
 }

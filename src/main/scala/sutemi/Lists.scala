@@ -126,4 +126,10 @@ object Lists {
     }
     loop(1, ordinal, list)
   }
+
+  def split[T](count: Int, list: List[T]): (List[T], List[T]) = {
+    val first = list.take(count)
+    val rest = list.drop(count)
+    (first, rest)
+  }
 }
