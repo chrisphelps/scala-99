@@ -116,4 +116,14 @@ object Lists {
   def duplicate[T](list: List[T]): List[T] = duplicateN(2, list)
 
   def duplicateN[T](times: Int, list: List[T]): List[T] = list flatMap { List.fill(times)(_) }
+
+  def drop[T](ordinal: Int, list: List[T]): List[T] = {
+    def loop(current: Int, ordinal: Int, list: List[T]): List[T] = list match {
+      case Nil => Nil
+      case l :: ls =>
+        if (current == ordinal) loop(1, ordinal, ls)
+        else l :: loop(current + 1, ordinal, ls)
+    }
+    loop(1, ordinal, list)
+  }
 }
