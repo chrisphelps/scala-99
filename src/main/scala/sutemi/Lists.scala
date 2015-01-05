@@ -148,4 +148,16 @@ object Lists {
     else if (count < 0) rotateIt(count + list.length, list)
     else rotateIt(count, list)
   }
+
+  def removeAt[T](index: Int, list: List[T]): (List[T], T) = list match {
+      // if list is Nil, it means that the index was greater than the original list length
+      // TODO maybe this should return more like (List[T], Option[T])?
+    case l :: ls =>
+      if (index == 0) (ls, l)
+      else {
+        val (rest, item) = removeAt(index - 1, ls)
+        (l :: rest, item)
+      }
+  }
+
 }

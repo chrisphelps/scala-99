@@ -99,4 +99,8 @@ class ListSuite extends FunSuite {
     assert(Lists.rotate(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) === List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c))
     assert(Lists.rotate(-2, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)) === List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i))
   }
+
+  test("problem 20: extract an element from a list") {
+    assert(Lists.removeAt(1, List('a, 'b, 'c, 'd)) === (List('a, 'c, 'd),'b))
+  }
 }
