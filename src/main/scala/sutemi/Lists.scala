@@ -112,4 +112,6 @@ object Lists {
       (same.length, x) :: encodeDirect(rest)
     }
   }
+
+  def duplicate[T](list: List[T]): List[T] = list flatMap { List.fill(2)(_) }
 }

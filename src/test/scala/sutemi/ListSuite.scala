@@ -74,4 +74,8 @@ class ListSuite extends FunSuite {
   test("problem 13: run-length encoding directly") {
     assert(Lists.encodeDirect(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)) === List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e)))
   }
+
+  test("problem 14: duplicate elements of a list") {
+    assert(Lists.duplicate(List('a, 'b, 'c, 'c, 'd)) === List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd))
+  }
 }
