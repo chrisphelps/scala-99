@@ -113,5 +113,7 @@ object Lists {
     }
   }
 
-  def duplicate[T](list: List[T]): List[T] = list flatMap { List.fill(2)(_) }
+  def duplicate[T](list: List[T]): List[T] = duplicateN(2, list)
+
+  def duplicateN[T](times: Int, list: List[T]): List[T] = list flatMap { List.fill(times)(_) }
 }

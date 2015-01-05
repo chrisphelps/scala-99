@@ -78,4 +78,8 @@ class ListSuite extends FunSuite {
   test("problem 14: duplicate elements of a list") {
     assert(Lists.duplicate(List('a, 'b, 'c, 'c, 'd)) === List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd))
   }
+
+  test("problem 15: repeat elements of a list") {
+    assert(Lists.duplicateN(3, List('a, 'b, 'c, 'c, 'd)) === List('a, 'a, 'a, 'b, 'b, 'b, 'c, 'c, 'c, 'c, 'c, 'c, 'd, 'd, 'd))
+  }
 }
