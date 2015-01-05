@@ -138,4 +138,14 @@ object Lists {
     val (slice, tail) = split(toIdx - fromIdx, rest)
     slice
   }
+
+  def rotate[T](count: Int, list: List[T]): List[T] = {
+    def rotateIt(count: Int, list: List[T]) = {
+      val (first, rest) = split(count, list)
+      rest ++ first
+    }
+    if (count == 0) list
+    else if (count < 0) rotateIt(count + list.length, list)
+    else rotateIt(count, list)
+  }
 }
