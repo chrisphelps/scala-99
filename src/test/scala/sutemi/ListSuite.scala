@@ -131,4 +131,8 @@ class ListSuite extends FunSuite {
     assert(res.length === 6)
     res.groupBy(x => x).foreach { case (k, v) => assert(v.length === 1)}
   }
+
+  test("problem 26: all combinations") {
+    assert(Lists.combinations(2, List('a, 'b, 'c)) === List(List('a, 'b), List('a, 'c), List('b, 'a), List('b, 'c), List('c, 'a), List('c, 'b)))
+  }
 }

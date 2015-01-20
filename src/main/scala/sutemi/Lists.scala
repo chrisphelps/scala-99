@@ -191,4 +191,14 @@ object Lists {
   def randomPermute[T](list: List[T]): List[T] = {
     randomSelect(list.length, list)
   }
+
+  def combinations[T](count: Int, list: List[T]): List[List[T]] = {
+    if (count == 1) list.map{ x => List(x) }
+    else {
+      for {
+        l <- list
+        r <- combinations(count - 1, list.filterNot{ t => t == l })
+      } yield l :: r
+    }
+  }
 }
