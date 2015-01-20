@@ -103,4 +103,9 @@ class ListSuite extends FunSuite {
   test("problem 20: extract an element from a list") {
     assert(Lists.removeAt(1, List('a, 'b, 'c, 'd)) === (List('a, 'c, 'd),'b))
   }
+
+  test("problem 21: insert an element at a given position into a list") {
+    assert(Lists.insertAt('new, 1, List('a, 'b, 'c, 'd)) === List('a, 'new, 'b, 'c, 'd))
+  }
+
 }

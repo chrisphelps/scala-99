@@ -160,4 +160,10 @@ object Lists {
       }
   }
 
+  def insertAt[T](item: T, index: Int, list: List[T]): List[T] = {
+    list.splitAt(index) match {
+      case (first, rest) => first ::: item :: rest
+    }
+  }
+
 }
