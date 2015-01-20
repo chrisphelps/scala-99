@@ -188,4 +188,7 @@ object Lists {
     randomSelect(count, range(0, highest))
   }
 
+  def randomPermute[T](list: List[T]): List[T] = {
+    randomSelect(list.length, list)
+  }
 }

@@ -125,4 +125,10 @@ class ListSuite extends FunSuite {
     res.foreach { x => assert(x <= 49) }
     res.groupBy(x => x).foreach { case (k, v) => assert(v.length === 1)}
   }
+
+  test("problem 25: random permutation") {
+    val res = Lists.randomPermute(List('a, 'b, 'c, 'd, 'e, 'f))
+    assert(res.length === 6)
+    res.groupBy(x => x).foreach { case (k, v) => assert(v.length === 1)}
+  }
 }
