@@ -184,4 +184,8 @@ object Lists {
     }
   }
 
+  def lotto(count: Int, highest: Int): List[Int] = {
+    randomSelect(count, range(0, highest))
+  }
+
 }

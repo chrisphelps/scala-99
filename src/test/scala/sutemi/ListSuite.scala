@@ -118,4 +118,11 @@ class ListSuite extends FunSuite {
     val elements = Lists.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)).groupBy(x => x)
     elements.foreach { case (k, v) => assert(v.length === 1) }
   }
+
+  test("problem 24: lotto") {
+    val res = Lists.lotto(6, 49)
+    assert(res.length === 6)
+    res.foreach { x => assert(x <= 49) }
+    res.groupBy(x => x).foreach { case (k, v) => assert(v.length === 1)}
+  }
 }
