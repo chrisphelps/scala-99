@@ -1,6 +1,7 @@
 package sutemi
 
 import scala.annotation.tailrec
+import scala.util.Random
 
 
 object Lists {
@@ -171,6 +172,16 @@ object Lists {
       List(to)
     else
       from :: range(from + 1, to)
+  }
+
+  def randomSelect[T](count: Int, list: List[T]): List[T] = {
+    if (count == 0)
+      Nil
+    else {
+      val rnd = new Random().nextInt(list.length)
+      val (remainder, item) = removeAt(rnd, list)
+      item :: randomSelect(count - 1, remainder)
+    }
   }
 
 }

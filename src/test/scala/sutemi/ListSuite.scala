@@ -111,4 +111,11 @@ class ListSuite extends FunSuite {
   test("problem 22: integers in a range") {
     assert(Lists.range(4, 9) === List(4, 5, 6, 7, 8, 9))
   }
+
+  test("problem 23: extract random elements from a list") {
+    assert(Lists.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)).length === 3)
+
+    val elements = Lists.randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)).groupBy(x => x)
+    elements.foreach { case (k, v) => assert(v.length === 1) }
+  }
 }
