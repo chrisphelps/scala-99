@@ -108,4 +108,7 @@ class ListSuite extends FunSuite {
     assert(Lists.insertAt('new, 1, List('a, 'b, 'c, 'd)) === List('a, 'new, 'b, 'c, 'd))
   }
 
+  test("problem 22: integers in a range") {
+    assert(Lists.range(4, 9) === List(4, 5, 6, 7, 8, 9))
+  }
 }

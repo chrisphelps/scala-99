@@ -166,4 +166,11 @@ object Lists {
     }
   }
 
+  def range(from: Int, to: Int): List[Int] = {
+    if (from == to)
+      List(to)
+    else
+      from :: range(from + 1, to)
+  }
+
 }
