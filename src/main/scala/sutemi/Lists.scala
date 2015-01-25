@@ -201,4 +201,19 @@ object Lists {
       } yield l :: r
     }
   }
+
+  def subsets[T](list: List[T]): List[(T, List[T])] = list match {
+    case Nil => Nil
+    case x :: xs => (x, xs) :: subsets(xs)
+  }
+
+  def combinationsWithoutReplacement[T](count: Int, list: List[T]): List[List[T]] = {
+    if (count == 1) list.map{ x => List(x) }
+    else {
+      for {
+        (l, ls) <- subsets(list)
+        r <- combinations(count - 1, ls)
+      } yield l :: r
+    }
+  }
 }
