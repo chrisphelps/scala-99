@@ -233,4 +233,11 @@ object Lists {
       cs <- group(gs, list.diff(c))
     } yield c :: cs
   }
+
+  def lsort[T](list: List[List[T]]): List[List[T]] = list.sortBy(_.length)
+
+  def lsortFreq[T](list: List[List[T]]): List[List[T]] = {
+    val freqs = list.groupBy(_.length)
+    list.sortBy(x => freqs(x.length).length)
+  }
 }

@@ -143,4 +143,14 @@ class ListSuite extends FunSuite {
   test("problem 27: group a list") {
     assert(Lists.group(List(1,2), List(1,2,3)) === List(List(List(1), List(2, 3)), List(List(2), List(1, 3)), List(List(3), List(1, 2))))
   }
+
+  test("problem 28a: sort by length") {
+    assert(Lists.lsort(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o))) ===
+      List(List('o), List('d, 'e), List('d, 'e), List('m, 'n), List('a, 'b, 'c), List('f, 'g, 'h), List('i, 'j, 'k, 'l)))
+  }
+
+  test("problem 28b: sort by length frequency") {
+    assert(Lists.lsortFreq(List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o))) ===
+      List(List('i, 'j, 'k, 'l), List('o), List('a, 'b, 'c), List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n)))
+  }
 }
