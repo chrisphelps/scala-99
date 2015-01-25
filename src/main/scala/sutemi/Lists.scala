@@ -207,6 +207,7 @@ object Lists {
     case x :: xs => (x, xs) :: subsets(xs)
   }
 
+  // TODO this still isn't right
   def combinationsWithoutReplacement[T](count: Int, list: List[T]): List[List[T]] = {
     if (count == 1) list.map{ x => List(x) }
     else {
@@ -215,5 +216,21 @@ object Lists {
         r <- combinations(count - 1, ls)
       } yield l :: r
     }
+  }
+
+  def group[T](list: List[T]): List[List[List[T]]] = {
+    for {
+      g1 <- list.combinations(2).toList
+      g2 <- list.diff(g1).combinations(3).toList
+    } yield List(g1, g2)
+  }
+
+  def group[T](groups: List[Int], list: List[T]): List[List[List[T]]] = groups match {
+    case Nil => Nil
+    case g :: Nil => List(list.combinations(g).toList)
+    case g :: gs => for {
+      c <- list.combinations(g).toList
+      cs <- group(gs, list.diff(c))
+    } yield c :: cs
   }
 }

@@ -139,4 +139,8 @@ class ListSuite extends FunSuite {
   test("problem 26b: all combinations (no replacement)") {
     assert(Lists.combinationsWithoutReplacement(2, List('a, 'b, 'c)) === List(List('a, 'b), List('a, 'c), List('b, 'c)))
   }
+
+  test("problem 27: group a list") {
+    assert(Lists.group(List(1,2), List(1,2,3)) === List(List(List(1), List(2, 3)), List(List(2), List(1, 3)), List(List(3), List(1, 2))))
+  }
 }
